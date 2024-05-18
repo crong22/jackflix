@@ -54,8 +54,17 @@ class FindViewController: UIViewController {
 
         //blueButton.semanticContentAttribute = .forceRightToLeft
         blueButton.setTitle("         ", for: .normal )
+        
         //blueButton.titleLabel?.font = UIFont.systemFont(ofSize: 9)
         //위의 코드는 Default의 버튼에 적용이 가능
+        
+        //let image = UIImage(named: "blue")?.withRenderingMode(.alwaysOriginal)
+        //blueButton.setImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControl.State#>)
+        //위에 코드는 오리지날로해서 버튼에 이미지가 보이게 함
+        
+        //let image = UIImage(systemName: "star")?.withTintColor(.white)
+        //blueButton.setImage(image, for: .normal)
+        
         //blueButton.setTitleColor(.white, for: .normal)
         blueButton.backgroundColor = .black
         blueButton.layer.cornerRadius = 15
@@ -92,6 +101,10 @@ class FindViewController: UIViewController {
 
     }
     
+    @IBAction func findMovieTapped(_ sender: UITextField) {
+        let findmovie = findTitleField.text!
+        print(findmovie)
+    }
     @IBAction func blueTapped(_ sender: Any) {
         greenButton.backgroundColor = .black
         greenLabel.textColor = .white

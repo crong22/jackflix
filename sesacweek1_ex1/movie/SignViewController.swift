@@ -48,6 +48,10 @@ class SignViewController: UIViewController {
         recommandField.clearsOnBeginEditing = true
     }
     
+    @IBAction func emailTapped(_ sender: UITextField) {
+        let mail = emailField.text!
+    }
+    
     @IBAction func signTapped(_ sender: Any) {
         signButton.endEditing(true)
     }
