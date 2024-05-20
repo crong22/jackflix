@@ -18,48 +18,41 @@ class SignViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.endEditing(true)
         //이메일 주소 또는 전화번호
-        emailField.backgroundColor = .gray
-        emailField.text = "이메일 주소 또는 전화번호"
-        emailField.keyboardType = .default
-        emailField.clearsOnBeginEditing = true
+        joinText(emailField, contents: "이메일 주소 또는 전화번호")
         
         //비밀번호
-        passwordField.backgroundColor = .gray
-        passwordField.text = "비밀번호"
-        passwordField.keyboardType = .default
-        passwordField.clearsOnBeginEditing = true
+        joinText(passwordField, contents: "비밀번호")
+        
         //닉네임
-        nicknameField.backgroundColor = .gray
-        nicknameField.text = "닉네임"
-        nicknameField.keyboardType = .default
-        nicknameField.clearsOnBeginEditing = true
+        joinText(nicknameField, contents: "닉네임")
         
         //위치
-        gpsField.backgroundColor = .gray
-        gpsField.text = "위치"
-        gpsField.keyboardType = .default
-        gpsField.clearsOnBeginEditing = true
+        joinText(gpsField, contents: "위치")
         
         //추천코드입력
-        recommandField.backgroundColor = .gray
-        recommandField.text = "추천코드입력"
-        recommandField.keyboardType = .default
-        recommandField.clearsOnBeginEditing = true
+        joinText(recommandField, contents: "추천코드입력")
+    }
+    func joinText(_ fieldName : UITextField, contents : String){
+        fieldName.backgroundColor = .gray
+        fieldName.text = contents
+        fieldName.keyboardType = .default
+        fieldName.clearsOnBeginEditing = true
+        view.endEditing(true)
+    }
+    @IBAction func backViewClicked(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    @IBAction func textClicked(_ sender: UITextField) {
+        view.endEditing(true)
     }
     
-    @IBAction func emailTapped(_ sender: UITextField) {
-        let mail = emailField.text!
+    @IBAction func signUpClicked(_ sender: UIButton) {
+        view.endEditing(true)
     }
-    
-    @IBAction func signTapped(_ sender: Any) {
-        signButton.endEditing(true)
-    }
-   
-    @IBAction func passTapped(_ sender: Any) {
+    @IBAction func passwordTapped(_ sender: UITextField) {
         passwordField.isSecureTextEntry = true
-        
     }
     
-
 }
